@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmqrbqo0bkxdg"]
+
+[ext_resource type="Script" uid="uid://docm4f1i6j0qo" path="res://scenes/obstacles/bird_formation_obstacle.gd" id="1_2h2f7"]
+
+[node name="BirdFormationObstacle" type="Node2D"]
+script = ExtResource("1_2h2f7")

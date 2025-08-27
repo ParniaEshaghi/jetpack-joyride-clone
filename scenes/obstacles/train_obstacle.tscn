@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://behndmro1lu43"]
+
+[ext_resource type="Texture2D" uid="uid://xgub21pyistj" path="res://assets/train.png" id="1_g2vdy"]
+[ext_resource type="Script" uid="uid://bp024bb4q6xa6" path="res://scenes/obstacles/train_obstacle.gd" id="1_r3aqt"]
+[ext_resource type="AudioStream" uid="uid://cnndf8h3p30t8" path="res://assets/sound/799291__thet00nedl00n__locomotive-train-horn.mp3" id="3_1vbgk"]
+[ext_resource type="AudioStream" uid="uid://bjp34eyy1560a" path="res://assets/sound/402074__meijstroaudio__train-on-railway-loop.wav" id="4_6p6oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3aqt"]
+size = Vector2(281, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vbgk"]
+size = Vector2(1157.5, 133.042)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p6oy"]
+size = Vector2(160.5, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvi7a"]
+size = Vector2(50, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iylb5"]
+size = Vector2(430, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47qov"]
+size = Vector2(693, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klian"]
+size = Vector2(626, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au7xl"]
+size = Vector2(819, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0wjy"]
+size = Vector2(909, 165)
+
+[node name="TrainObstacle" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_r3aqt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2356, 0)
+texture = ExtResource("1_g2vdy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.5, 42.5)
+shape = SubResource("RectangleShape2D_r3aqt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(752.229, 36.1771)
+rotation = -0.00302553
+shape = SubResource("RectangleShape2D_1vbgk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(583.75, -56)
+shape = SubResource("RectangleShape2D_6p6oy")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2(606, -95.5)
+shape = SubResource("RectangleShape2D_rvi7a")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+position = Vector2(3425, -94)
+shape = SubResource("RectangleShape2D_rvi7a")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
+position = Vector2(3994, -70)
+shape = SubResource("RectangleShape2D_rvi7a")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2(1857, -65)
+shape = SubResource("RectangleShape2D_6p6oy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(1550, 83.75)
+shape = SubResource("RectangleShape2D_iylb5")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(2938.5, 87)
+shape = SubResource("RectangleShape2D_47qov")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2(4541, 78.5)
+shape = SubResource("RectangleShape2D_klian")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(2178.5, 34.5)
+shape = SubResource("RectangleShape2D_au7xl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(3762.5, 16.5)
+shape = SubResource("RectangleShape2D_o0wjy")
+
+[node name="HornSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1vbgk")
+volume_db = -5.0
+
+[node name="RailSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6p6oy")
+volume_db = -15.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

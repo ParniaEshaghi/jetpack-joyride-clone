@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccaht2fjajdtc"]
+
+[ext_resource type="Script" uid="uid://det8b6yl1q5gt" path="res://scenes/obstacle_spawner.gd" id="1_vyba0"]
+[ext_resource type="PackedScene" uid="uid://cmqrbqo0bkxdg" path="res://scenes/obstacles/bird_formation_obstacle.tscn" id="2_0ghqo"]
+[ext_resource type="PackedScene" uid="uid://cq5frjpsf3bjg" path="res://scenes/obstacles/spaceship_obstacle.tscn" id="3_6804n"]
+[ext_resource type="PackedScene" uid="uid://behndmro1lu43" path="res://scenes/obstacles/train_obstacle.tscn" id="4_562o3"]
+
+[node name="ObstacleSpawner" type="Node2D"]
+script = ExtResource("1_vyba0")
+obstacles = Array[PackedScene]([ExtResource("2_0ghqo"), ExtResource("3_6804n"), ExtResource("4_562o3")])
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

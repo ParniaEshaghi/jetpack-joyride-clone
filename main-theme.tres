@@ -1,0 +1,64 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bi8os3cbyikl7"]
+
+[ext_resource type="Texture2D" uid="uid://bmqpkcxkkqeeb" path="res://assets/kenney/spritesheet-double.png" id="1_p2qx8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a7lny"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("1_p2qx8")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(768, 128, 128, 128)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlemv"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("1_p2qx8")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(768, 0, 128, 128)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ym758"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("1_p2qx8")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(768, 128, 128, 128)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p56a1"]
+content_margin_top = 50.0
+texture = ExtResource("1_p2qx8")
+region_rect = Rect2(0, 0, 512, 120)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oo0fn"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_p2qx8")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(768, 0, 128, 128)
+
+[resource]
+Button/colors/font_color = Color(1, 0.945098, 0.823529, 1)
+Button/colors/font_hover_color = Color(0.639216, 0.439216, 0.227451, 1)
+Button/colors/font_hover_pressed_color = Color(0.639216, 0.439216, 0.227451, 1)
+Button/colors/font_pressed_color = Color(0.639216, 0.439216, 0.227451, 1)
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxTexture_a7lny")
+Button/styles/normal = SubResource("StyleBoxTexture_vlemv")
+Button/styles/pressed = SubResource("StyleBoxTexture_ym758")
+HeaderLarge/colors/font_color = Color(1, 0.945098, 0.823529, 1)
+HeaderLarge/styles/normal = SubResource("StyleBoxTexture_p56a1")
+Label/styles/normal = SubResource("StyleBoxTexture_oo0fn")

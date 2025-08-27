@@ -1,0 +1,51 @@
+[gd_scene load_steps=15 format=3 uid="uid://cq5frjpsf3bjg"]
+
+[ext_resource type="Texture2D" uid="uid://dggpt4wvycwfv" path="res://assets/spaceship/ship0.png" id="1_u8sxt"]
+[ext_resource type="Script" uid="uid://dy5y0qxntixw0" path="res://scenes/obstacles/spaceship_obstacle.gd" id="1_yqfgg"]
+[ext_resource type="Texture2D" uid="uid://nrchwnsfdgp6" path="res://assets/spaceship/ship1.png" id="3_d0y4f"]
+[ext_resource type="Texture2D" uid="uid://djshtscmln2p5" path="res://assets/spaceship/ship2.png" id="4_1ug6l"]
+[ext_resource type="Texture2D" uid="uid://dnxefkdfrqu8a" path="res://assets/spaceship/ship3.png" id="5_lpjov"]
+[ext_resource type="Texture2D" uid="uid://dpox5mscaldoo" path="res://assets/spaceship/ship4.png" id="6_3is3l"]
+[ext_resource type="Texture2D" uid="uid://c4s7agf6k6hb3" path="res://assets/spaceship/ship5.png" id="7_chxjn"]
+[ext_resource type="Texture2D" uid="uid://dl8wto85eyv4x" path="res://assets/spaceship/ship6.png" id="8_xnqyu"]
+[ext_resource type="Texture2D" uid="uid://ca5sqi0g42tnh" path="res://assets/spaceship/ship7.png" id="9_du1wm"]
+[ext_resource type="Texture2D" uid="uid://bqrwe8ksmxr24" path="res://assets/spaceship/ship8.png" id="10_jlapt"]
+[ext_resource type="Texture2D" uid="uid://gv5ad61tfp4h" path="res://assets/spaceship/ship9.png" id="11_nelp4"]
+[ext_resource type="AudioStream" uid="uid://bxfgxfo3gwhmt" path="res://assets/sound/spaceship-engine-320kbps.mp3" id="12_1ug6l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhc1t"]
+radius = 25.0
+height = 154.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqfgg"]
+radius = 6.0
+height = 70.0
+
+[node name="SpaceshipObstacle" type="Area2D"]
+script = ExtResource("1_yqfgg")
+ship_sprites = Array[Texture2D]([ExtResource("1_u8sxt"), ExtResource("3_d0y4f"), ExtResource("4_1ug6l"), ExtResource("5_lpjov"), ExtResource("6_3is3l"), ExtResource("7_chxjn"), ExtResource("8_xnqyu"), ExtResource("9_du1wm"), ExtResource("10_jlapt"), ExtResource("11_nelp4")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 0)
+texture = ExtResource("1_u8sxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -1)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_hhc1t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(42, -50)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yqfgg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(42, 50)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yqfgg")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_1ug6l")
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
